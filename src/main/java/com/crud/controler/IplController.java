@@ -50,5 +50,10 @@ public class IplController {
     public String welcome(){
         return "WeLcome";
     }
+
+    @GetMapping("/wel")
+    public String welcome1(){
+        return "WeLcome";
+    }
 }
 
