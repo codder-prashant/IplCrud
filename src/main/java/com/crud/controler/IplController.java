@@ -45,5 +45,10 @@ public class IplController {
         response.put("Delete", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/wel")
+    public String welcome(){
+        return "WeLcome";
+    }
 }
 
