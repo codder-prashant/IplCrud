@@ -31,29 +31,22 @@ public class IplController {
         List<IplTeam> iplTeams = iplService.getAllTeams();
         return ResponseEntity.ok(iplTeams);
     }
+
     @PutMapping("/update/{id}")  // http://localhost:8080/update/2
-    public ResponseEntity<IplTeam> update(@PathVariable  int id, @RequestBody IplTeam iplTeam) {
-        IplTeam updatedTeam =iplService.updateTeam(id, iplTeam);
+    public ResponseEntity<IplTeam> update(@PathVariable int id, @RequestBody IplTeam iplTeam) {
+        IplTeam updatedTeam = iplService.updateTeam(id, iplTeam);
         return new ResponseEntity<>(updatedTeam, HttpStatus.OK);
 
     }
 
     @DeleteMapping("/{id}") // http://localhost:8080/2
-    public ResponseEntity<Map<String, Boolean>> delete(@PathVariable int id){
+    public ResponseEntity<Map<String, Boolean>> delete(@PathVariable int id) {
         iplService.delete(id);
-        Map<String, Boolean> response=new HashMap<>();
+        Map<String, Boolean> response = new HashMap<>();
         response.put("Delete", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/wel")
-    public String welcome(){
-        return "WeLcome";
-    }
 
-    @GetMapping("/wel")
-    public String welcome1(){
-        return "WeLcome";
-    }
 }
 
